@@ -1,0 +1,1 @@
+![Build Status](https://travis-ci.org/dimofeev/flex-automation-article.svg?branch=master)
