@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 8
+script:
+  - cd ./flex-automation-article/
+  - npm install
+  - npm install -g kinvey-cli
+  - npm test
+  - node ./buildProcessAuth.js
+  - kinvey profile create $KINVEY_SERVICE_PROFILE --email $KINVEY_USER_EMAIL --password $KINVEY_USER_PASSWORD
+  - kinvey flex deploy --serviceId $KINVEY_SERVICE_ID
+branches:
+  only:
+  - master
